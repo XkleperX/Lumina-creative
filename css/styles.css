@@ -116,7 +116,6 @@ i:hover {
 /*! Main content */
 
 .main-content {
-  max-width: var(--container-narrow);
   margin: 150px auto;
   padding: 8px 15px;
   text-align: center;
@@ -145,6 +144,7 @@ i:hover {
 .gallery-item img {
   border-radius: 10px;
   transition: 0.5s;
+
   &:hover {
     transform: scale(1.1);
     opacity: 0.7;
@@ -155,10 +155,10 @@ i:hover {
 /*! Footer */
 .footer {
   max-width: var(--container-normal);
-
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 8px 15px;
   font-size: 0.8rem;
   margin-bottom: 1rem;
@@ -191,12 +191,16 @@ i:hover {
 
 /* Services */
 .services {
-  max-width: 100%;
   background-color: var(--dark-color);
-  margin: 0 auto;
   padding: 2.5rem 15px;
   text-align: center;
   color: white;
+}
+
+.services-container {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 8px 15px;
 }
 
 .services h1 {
@@ -205,16 +209,14 @@ i:hover {
 
 .services-flex {
   display: flex;
-  width: var(--container-normal);
-  margin: 0 auto;
   justify-content: space-around;
-  flex: 1;
   align-items: center;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex: 1;
 }
 
 .services-item {
-  width: 500px;
+  max-width: 350px;
   padding: 0.5rem;
   text-align: center;
   transition: 0.5s;
@@ -284,12 +286,9 @@ i:hover {
 /* Contact */
 
 .contact {
-  max-width: 100%;
-  background-color: var(--dark-color);
   padding: 10rem 15px;
-  margin: 0 auto;
+  margin: 2rem auto;
   color: white;
-  margin-bottom: 2rem;
 }
 
 .contact span {
@@ -358,25 +357,83 @@ i:hover {
 
 
 /*TODO Media Queries */
-/* see chat gpt */
-/* Large Devices, Wide Screens */
+@media (max-width: 768px) {
 
+  body {
+    font-size: 16px;
+  }
 
-/* ! This is how you do it with the flexbox */
-/* .gallery{
-  max-width: var(--container-normal);
-  margin: 0 auto;
-  padding: 8px 15px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  
+  .main-content {
+    margin: 50px auto;
+    padding: 3rem 15px;
+    text-align: center;
+  }
+
+  .main-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links li {
+    padding: 8px 5px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .gallery-item:last-child {
+    display: none;
+  }
+
+  .services-flex {
+    flex-direction: column;
+  }
+
+  .services-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .team {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .team-member {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .team-member img {
+    width: 70%;
+    border-radius: 10px;
+  }
+
+  .team-member h3,
+  .team-member p {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .form-group {
+    padding: 0.2rem 2rem;
+  }
 }
 
-.gallery-item{
-  width: 300px;
-  height: 300px; 
-}
-  */
